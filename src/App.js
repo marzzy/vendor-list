@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const reduxDispatch = useDispatch();
+
+  useEffect(() => {
+    reduxDispatch({ type: 'FETCH_INITIAL_DATA' });
+  }, [reduxDispatch]);
+
   return (
     <div className="App">
       <header className="App-header">
