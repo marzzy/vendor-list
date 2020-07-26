@@ -10,6 +10,11 @@ export default function (state = initialState, action) {
         currentFilter: 'none',
         filtersList: action.data,
       };
+    case 'CHANGED_FILTERS_SUCCEEDED':
+      return {
+        currentFilter: action.filterValue,
+        filtersList: state.filtersList,
+      };
 
     default:
       return state;

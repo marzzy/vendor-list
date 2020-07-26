@@ -1,4 +1,5 @@
 import { put, takeLatest, all } from 'redux-saga/effects';
+import { watchFilterChange } from './changeFilter';
 import { FetchInitialData, FetchFilters } from '../redux/actions';
 
 function* watchFetchInitial() {
@@ -26,7 +27,7 @@ function* initFech() {
     ).then(
       res => res.json()
     ).then(
-      res => res.data.restaurantFilterTypes.find(item => item.value === 'filters').restaurantFilters
+      res => res.data.restaurantFilterTypes.find(item => item.value === 'sortings').restaurantFilters
     );
 
     yield put(FetchFilters(data));
@@ -38,5 +39,6 @@ function* initFech() {
 export default function* rootSaga() {
   yield all([
     watchFetchInitial(),
+    watchFilterChange(),
   ])
 }
