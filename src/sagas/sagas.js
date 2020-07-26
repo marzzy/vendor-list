@@ -9,7 +9,7 @@ function* watchFetchInitial() {
 function* initFech() {
   try {
     const data = yield fetch(
-      'https://snappfood.ir/mobile/v2/restaurant/vendors-list'
+      'https://snappfood.ir/mobile/v2/restaurant/vendors-list?page=2'
     ).then(
       res => res.json()
     ).then(

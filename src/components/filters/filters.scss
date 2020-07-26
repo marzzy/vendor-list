@@ -1,0 +1,27 @@
+ul.filterBox {
+	list-style: none;
+	display: flex;
+	flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 0 5px 10px 5px;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  background: white;
+
+  li {
+    min-width: 110px;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: 0.2s all linear;
+
+    &.active {
+      background-color: black;
+      color: white;
+      transition: 0.2s all linear;
+    }
+  }
+}

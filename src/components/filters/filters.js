@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ChangeFilter } from '../../redux/actions';
+import './filters.scss';
 
 function Filters() {
   const { currentFilter, filtersList } = useSelector(state => state.filters);
@@ -12,7 +13,7 @@ function Filters() {
 
   if (filtersList && filtersList.length){
     return (
-      <ul>
+      <ul className="filterBox">
         {filtersList.map((filter, index) => (
           <li
             key={`${filter.value}-${index}`}

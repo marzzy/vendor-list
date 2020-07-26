@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Filters from './components/filters/filters';
 import Cards from './components/cards/cards';
-import './App.css';
+import './App.scss';
 
 function App() {
   const reduxDispatch = useDispatch();
@@ -13,10 +13,10 @@ function App() {
 
   return (
     <div className="App">
-      <div className="Filters">
+      <div>
         <Filters />
       </div>
-      <div className="Cards">
+      <div className="cards">
         <Cards />
       </div>
     </div>
